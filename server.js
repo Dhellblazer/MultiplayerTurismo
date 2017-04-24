@@ -27,7 +27,7 @@ io.sockets.on('connection', function(socket) {
     });
 
     socket.on ('positionUpdate', function (data) {
-         var i;
+     //    var i;
             players[data.id].x = data.x;
             players[data.id].y = data.y;
             players[data.id].z = data.z;
