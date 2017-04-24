@@ -27,15 +27,12 @@ io.sockets.on('connection', function(socket) {
     });
 
     socket.on ('positionUpdate', function (data) {
-     //    var i;
             players[data.id].x = data.x;
             players[data.id].y = data.y;
             players[data.id].z = data.z;
 
         socket.broadcast.emit ('playerMoved', data);
-      //  for(i=0;i<=players.length-1;i++){
-      //  console.log("jugadores: "+players);
-      //  }
+
     });
     
     
