@@ -5,8 +5,8 @@ var app = express();
 var server = require('http').createServer(app);
 var io = require('socket.io')(server);
 
-app.use(express.cookieParser());
-app.use(express.session({ secret: "keyboard cat" }));
+var cookieParser = require('cookie-parser');
+app.use(cookieParser(config.cookieSecret));
 
 var players = [];
 
