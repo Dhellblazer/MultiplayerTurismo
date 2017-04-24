@@ -20,7 +20,6 @@ io.sockets.on('connection', function(socket) {
             var idNum = players.length;
             var newPlayer = new Player (idNum);
             players.push (newPlayer);
-       
 
             socket.emit ('playerData', {id: idNum, players: players});
             socket.broadcast.emit ('playerJoined', newPlayer);
@@ -32,13 +31,8 @@ io.sockets.on('connection', function(socket) {
             players[data.id].z = data.z;
 
         socket.broadcast.emit ('playerMoved', data);
-
     });
-    
-    
 });
-
-
 
 console.log ('Server started.');
 server.listen(process.env.PORT || 3000);
