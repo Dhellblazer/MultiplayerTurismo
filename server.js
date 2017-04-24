@@ -5,10 +5,13 @@ var app = express();
 var server = require('http').createServer(app);
 var io = require('socket.io')(server);
 
+app.use(express.cookieParser());
+app.use(express.session({ secret: "keyboard cat" }));
+
 var players = [];
 
 function Player (id,x,y,z,entity) {
-    'use strict';
+   
     this.id = id;
     this.x = 0;
     this.y = 0;
