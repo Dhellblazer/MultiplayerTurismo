@@ -1,0 +1,19 @@
+{
+  "name": "multiplayerturismo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+"dependencies":{
+"express":"*",
+"socket.io":"*"
+},
+  "scripts": {
+    "test": "node server.js",
+    "start": "node server.js"
+  },
+"engines":{
+"node": "6.10.2"
+},
+  "author": "Diego Noguera",
+  "license": "ISC"
+}
