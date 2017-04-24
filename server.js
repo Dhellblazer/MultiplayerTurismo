@@ -5,7 +5,7 @@ var app = express();
 var server = require('http').createServer(app);
 var io = require('socket.io')(server);
 
-var players = new Array();
+var players = [];
 
 function Player (id) {
     this.id = id;
@@ -26,7 +26,6 @@ io.sockets.on('connection', function(socket) {
     });
 
     socket.on ('positionUpdate', function (data) {
-        var i={};
             players[data.id].x = data.x;
             players[data.id].y = data.y;
             players[data.id].z = data.z;
