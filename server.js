@@ -6,7 +6,6 @@ var server = require('http').createServer(app);
 var io = require('socket.io')(server);
 
 var players = [];
-var this = [];
 
 function Player (id) {
     this.id = id;
