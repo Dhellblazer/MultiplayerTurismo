@@ -33,9 +33,9 @@ io.sockets.on('connection', function(socket) {
             players[data.id].z = data.z;
 
         socket.broadcast.emit ('playerMoved', data);
-        for(i=0;i<=players.length-1;i++){
-        console.log("jugadores: "+players[data.i]);
-        }
+      //  for(i=0;i<=players.length-1;i++){
+        console.log("jugadores: "+players);
+      //  }
     });
     
     
