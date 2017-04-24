@@ -7,7 +7,7 @@ var io = require('socket.io')(server);
 
 var players = [];
 
-function SloppyPlayer (id) {
+function SloppyPlayer (id,x,y,z,entity) {
     this.id = id;
     this.x = 0;
     this.y = 0;
