@@ -20,19 +20,28 @@ io.sockets.on('connection', function(socket) {
             var idNum = players.length;
             var newPlayer = new Player (idNum);
             players.push (newPlayer);
+       
 
             socket.emit ('playerData', {id: idNum, players: players});
             socket.broadcast.emit ('playerJoined', newPlayer);
     });
 
     socket.on ('positionUpdate', function (data) {
+         var i;
             players[data.id].x = data.x;
             players[data.id].y = data.y;
             players[data.id].z = data.z;
 
         socket.broadcast.emit ('playerMoved', data);
+        for(i=0;i<=players.length;i++){
+        console.log("jugadores:"+players[i]);
+        }
     });
+    
+    
 });
+
+
 
 console.log ('Server started.');
 server.listen(process.env.PORT || 3000);
