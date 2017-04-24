@@ -7,7 +7,7 @@ var io = require('socket.io')(server);
 
 var players = [];
 
-function Player (id) {
+function SloppyPlayer (id) {
     this.id = id;
     this.x = 0;
     this.y = 0;
@@ -18,7 +18,7 @@ function Player (id) {
 io.sockets.on('connection', function(socket) {
     socket.on ('initialize', function () {
             var idNum = players.length;
-            var newPlayer = new Player (idNum);
+            var newPlayer = new SloppyPlayer (idNum);
             players.push (newPlayer);
 
             socket.emit ('playerData', {id: idNum, players: players});
