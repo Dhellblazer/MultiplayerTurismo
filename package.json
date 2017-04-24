@@ -5,6 +5,7 @@
   "main": "server.js",
 "dependencies":{
 "express":"*",
+  "cookie-parser":"*",
 "socket.io":"*"
 },
   "scripts": {
